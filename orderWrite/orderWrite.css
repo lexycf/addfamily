@@ -10,20 +10,26 @@ body {
   background: url('img/topbg.png') no-repeat;
   background-size: 100%;
 }
-.orderWrite .addinfo {
+.orderWrite .delBox {
+  text-align: right;
+  margin: 0 0.5rem;
+  font-size: 0.26rem;
+  color: #a0a0a0;
+}
+.orderWrite .addinfoBox {
   margin: 0.3rem 0.4rem;
-  padding: 0.5rem 0.4rem;
+  padding: 0.5rem 0.3rem;
   background: #fff;
   border-radius: 0.3rem;
 }
-.orderWrite .addinfo .inputBox {
+.orderWrite .addinfoBox .inputBox {
   margin-bottom: 0.4rem;
 }
-.orderWrite .addinfo .inputBox label {
+.orderWrite .addinfoBox .inputBox label {
   color: #7e6b5a;
   font-size: 0.28rem;
 }
-.orderWrite .addinfo .inputBox .inp {
+.orderWrite .addinfoBox .inputBox .inp {
   width: 2.7rem;
   height: 0.48rem;
   border: none;
@@ -31,21 +37,21 @@ body {
   margin-right: 0.1rem;
   font-size: 0.3rem;
 }
-.orderWrite .addinfo .inputBox .inp#idcard {
+.orderWrite .addinfoBox .inputBox .inp#idcard {
   width: 4.4rem;
 }
-.orderWrite .addinfo .inputBox a {
+.orderWrite .addinfoBox .inputBox a {
   font-size: 0.28rem;
   color: #bfbfbf;
   border: 1px solid #bfbfbf;
   border-radius: 0.2rem;
-  padding: 0.1rem 0.5rem;
+  padding: 0.1rem 0.5rem 0.1rem 0.4rem;
   white-space: nowrap;
 }
-.orderWrite .addinfo .inputBox a.relation {
+.orderWrite .addinfoBox .inputBox a.relation {
   position: relative;
 }
-.orderWrite .addinfo .inputBox a.relation:after {
+.orderWrite .addinfoBox .inputBox a.relation:after {
   position: absolute;
   content: '';
   display: inline-block;
@@ -63,21 +69,30 @@ body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.orderWrite .addinfo .equities h1 {
+.orderWrite .addinfoBox .equities h1 {
   font-size: 0.28rem;
   color: #1b1b1b;
   font-weight: normal;
 }
-.orderWrite .addinfo .equities ul {
+.orderWrite .addinfoBox .equities ul {
   margin-top: 0.32rem;
 }
-.orderWrite .addinfo .equities ul li {
+.orderWrite .addinfoBox .equities ul li {
   color: #7e6b5a;
   font-size: 0.24rem;
-  list-style-type: disc;
   float: left;
   line-height: 0.5rem;
-  margin-left: 0.2rem;
+  margin-left: 0.1rem;
+}
+.orderWrite .addinfoBox .equities ul li span {
+  display: inline-block;
+  width: 0.1rem;
+  height: 0.1rem;
+  background: #7e6b5a;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 0.1rem;
 }
 .orderWrite .addselfInfo .exp {
   margin: 0 0.4rem;
@@ -162,4 +177,68 @@ body {
 .orderWrite .payInfo .clause .icon-check-on {
   background: url(img/icon-check-on.png) no-repeat;
   background-size: .36rem auto;
+}
+.orderWrite .selRelationBox {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.orderWrite .selRelationBox .selRelation {
+  width: 5.2rem;
+  height: 7.6rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2.6rem;
+  margin-top: -3.8rem;
+  padding: 0.3rem;
+  box-sizing: border-box;
+}
+.orderWrite .selRelationBox .tit {
+  text-align: center;
+  border-bottom: 1px solid #ecedf0;
+  padding-bottom: 0.3rem;
+}
+.orderWrite .selRelationBox .tit h1 {
+  font-size: 0.36rem;
+  color: #000;
+}
+.orderWrite .selRelationBox .tit p {
+  font-size: 0.24rem;
+  color: #fc9447;
+}
+.orderWrite .selRelationBox .relationList li {
+  width: 50%;
+  float: left;
+}
+.orderWrite .selRelationBox .relationList li .icon {
+  width: 0.98rem;
+  height: 0.98rem;
+  margin: 0.4rem auto 0;
+}
+.orderWrite .selRelationBox .relationList li .icon img {
+  width: 100%;
+}
+.orderWrite .selRelationBox .relationList li .exp {
+  text-align: center;
+  color: #7e6b5a;
+  font-size: 0.28rem;
+  margin-top: 0.16rem;
+}
+.orderWrite .selRelationBox .relationList li .nocheck {
+  width: 0.36rem;
+  height: 0.47rem;
+  margin: 0.34rem auto 0;
+  background: url(img/nocheck.png) no-repeat left bottom;
+  background-size: 100%;
+}
+.orderWrite .selRelationBox .relationList li .nocheck.check {
+  background: url(img/check.png) no-repeat left top;
+  background-size: 100%;
 }

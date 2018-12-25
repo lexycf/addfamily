@@ -10,20 +10,20 @@ body {
   background: url('img/topbg.png') no-repeat;
   background-size: 100%;
 }
-.addfamilyInfo .addinfo {
+.addfamilyInfo .addinfoBox {
   margin: 0.3rem 0.4rem;
-  padding: 0.5rem 0.4rem;
+  padding: 0.5rem 0.36rem;
   background: #fff;
   border-radius: 0.3rem;
 }
-.addfamilyInfo .addinfo .inputBox {
+.addfamilyInfo .addinfoBox .inputBox {
   margin-bottom: 0.4rem;
 }
-.addfamilyInfo .addinfo .inputBox label {
+.addfamilyInfo .addinfoBox .inputBox label {
   color: #7e6b5a;
   font-size: 0.28rem;
 }
-.addfamilyInfo .addinfo .inputBox .inp {
+.addfamilyInfo .addinfoBox .inputBox .inp {
   width: 2.3rem;
   height: 0.48rem;
   border: none;
@@ -31,10 +31,10 @@ body {
   margin-right: 0.1rem;
   font-size: 0.3rem;
 }
-.addfamilyInfo .addinfo .inputBox .inp#idcard {
+.addfamilyInfo .addinfoBox .inputBox .inp#idcard {
   width: 4.4rem;
 }
-.addfamilyInfo .addinfo .inputBox a {
+.addfamilyInfo .addinfoBox .inputBox a {
   font-size: 0.28rem;
   color: #bfbfbf;
   border: 1px solid #bfbfbf;
@@ -44,10 +44,10 @@ body {
   float: right;
   margin-top: -0.14rem;
 }
-.addfamilyInfo .addinfo .inputBox a.relation {
+.addfamilyInfo .addinfoBox .inputBox a.relation {
   position: relative;
 }
-.addfamilyInfo .addinfo .inputBox a.relation:after {
+.addfamilyInfo .addinfoBox .inputBox a.relation:after {
   position: absolute;
   content: '';
   display: inline-block;
@@ -65,21 +65,36 @@ body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.addfamilyInfo .addinfo .equities h1 {
+.addfamilyInfo .addinfoBox .equities h1 {
   font-size: 0.28rem;
   color: #1b1b1b;
   font-weight: normal;
 }
-.addfamilyInfo .addinfo .equities ul {
+.addfamilyInfo .addinfoBox .equities ul {
   margin-top: 0.32rem;
 }
-.addfamilyInfo .addinfo .equities ul li {
+.addfamilyInfo .addinfoBox .equities ul li {
   color: #7e6b5a;
   font-size: 0.24rem;
-  list-style-type: disc;
   float: left;
   line-height: 0.5rem;
-  margin-left: 0.2rem;
+  margin-left: 0.1rem;
+}
+.addfamilyInfo .addinfoBox .equities ul li span {
+  display: inline-block;
+  width: 0.1rem;
+  height: 0.1rem;
+  background: #7e6b5a;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 0.1rem;
+}
+.addfamilyInfo .delBox {
+  text-align: right;
+  margin: 0 0.5rem;
+  font-size: 0.26rem;
+  color: #a0a0a0;
 }
 .addfamilyInfo .addselfInfo .exp {
   margin: 0 0.4rem;

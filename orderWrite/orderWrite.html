@@ -17,46 +17,51 @@
                 <h1>请先填写您的个人信息</h1>
                 <p>个人信息严格保密，仅做身份识别</p>
             </div>
-            <div class="addinfo">
-                <div class="inputBox">
-                    <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;">本人</a>
-                </div>
-                <div class="inputBox">
-                    <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
-                </div>
+            <div class="addinfos">
+                <div class="addinfoBox">
+                    <div class="inputBox">
+                        <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;">本人</a>
+                    </div>
+                    <div class="inputBox">
+                        <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
+                    </div>
 
-                <div class="equities">
+                    <div class="equities">
                         <h1>可获得的权益</h1>
                         <ul>
-                            <li>大病互助最高40万互助金</li>
-                            <li>意外身故最高20万互助金</li>
-                            <li>意外医疗最高5万互助金</li>
+                            <li><span></span>大病互助最高40万互助金</li>
+                            <li><span></span>意外身故最高20万互助金</li>
+                            <li><span></span>意外医疗最高5万互助金</li>
                         </ul>
                         <div class="clears"></div>
-                    </div>   
+                    </div>  
+                </div> 
             </div>
             
         </div>
         <div class="familyInfo">
             <h1>你还没有添加家人，为家人添加一份守护</h1>
             <div class="familyInfoList">
-                <div class="addinfo">
-                    <div class="inputBox">
-                        <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class='relation'>本人</a>
-                    </div>
-                    <div class="inputBox">
-                        <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
-                    </div>
-    
-                    <div class="equities">
+                <div class="addinfo" data-index="0">
+                    <div class="addinfoBox">
+                        <div class="inputBox">
+                            <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class='relation'>请选择</a>
+                        </div>
+                        <div class="inputBox">
+                            <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
+                        </div>
+        
+                        <div class="equities">
                             <h1>可获得的权益</h1>
                             <ul>
-                                <li>大病互助最高40万互助金</li>
-                                <li>意外身故最高20万互助金</li>
-                                <li>意外医疗最高5万互助金</li>
+                                <li><span></span>大病互助最高40万互助金</li>
+                                <li><span></span>意外身故最高20万互助金</li>
+                                <li><span></span>意外医疗最高5万互助金</li>
                             </ul>
                             <div class="clears"></div>
                         </div>   
+                    </div>
+                    <div class="delBox"><div class="delBtn">删除</div></div>
                 </div>
             </div>
             <div class="addIcon">
@@ -79,6 +84,37 @@
                 <a href="javascript:;"  class="ft-block-link" id="j_linkDaikouAgree">《会员公约》</a>
             </div>
         </div>
+
+        <div class="selRelationBox">
+                <div class='selRelation'>
+                    <div class="tit">
+                        <h1>选择家人关系</h1>
+                        <p>注：岳父岳母属于其他亲友</p>
+                    </div>
+                    <ul class='relationList'>
+                        <li class='clickType' data-relat='1'>
+                            <div class="icon"><img src="./img/icon1.png" alt=""></div>
+                            <div class='exp'>儿女</div>
+                            <p class='nocheck'></p>
+                        </li>
+                        <li  class='clickType' data-relat='2'>
+                            <div class="icon"><img src="./img/icon2.png" alt=""></div>
+                            <div class='exp'>父母</div>
+                            <p class='nocheck'></p>
+                        </li>
+                        <li class='clickType' data-relat='3'>
+                            <div class="icon"><img src="./img/icon3.png" alt=""></div>
+                            <div class='exp'>爱人</div>
+                            <p class='nocheck'></p>
+                        </li>
+                        <li class='clickType' data-relat='4'>
+                            <div class="icon"><img src="./img/icon4.png" alt=""></div>
+                            <div class='exp'>其他亲友</div>
+                            <p class='nocheck'></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </div>
     <script src="./orderWrite.js"></script>
 </body>

@@ -10,9 +10,15 @@ html,body{
     width:100%;
     background:url('./img/topbg.png') no-repeat;
     background-size:100%;
-    .addinfo{
+     .delBox{
+        text-align:right;
+        margin:0 0.5rem;
+        font-size:0.26rem;
+        color:#a0a0a0;
+    }
+    .addinfoBox{
         margin:0.3rem 0.4rem;
-        padding:0.5rem 0.4rem;
+        padding:0.5rem 0.3rem;
         background:#fff;
         border-radius:0.3rem;
         .inputBox{
@@ -37,7 +43,7 @@ html,body{
                 color:#bfbfbf;
                 border:1px solid #bfbfbf;
                 border-radius:0.2rem;
-                padding:0.1rem 0.5rem;
+                padding:0.1rem 0.5rem 0.1rem 0.4rem;
                 white-space: nowrap;
                 &.relation{
                     .pos(r);
@@ -75,10 +81,19 @@ html,body{
                 li{
                     color:#7e6b5a;
                     font-size:0.24rem;
-                    list-style-type: disc;
                     float:left;
                     line-height:0.5rem;
-                    margin-left:0.2rem;
+                    margin-left:0.1rem;
+                    span{
+                        display:inline-block;
+                        width:0.1rem;
+                        height:0.1rem;
+                        background:#7e6b5a;
+                        border-radius:50%;
+                        vertical-align: middle;
+                        margin-top:-3px;
+                        margin-right:0.1rem;
+                    }
                 }
             }
         }
@@ -180,6 +195,72 @@ html,body{
             .icon-check-on {
                 background: url(./img/icon-check-on.png) no-repeat;
                 background-size: .36rem auto;
+            }
+        }
+    }
+    .selRelationBox{
+        display:none;
+        position: fixed;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        background:rgba(0,0,0,0.8);
+        .selRelation{
+            width:5.2rem;
+            height:7.6rem;
+            background:#fff;
+            border-radius:0.2rem;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left:-2.6rem;
+            margin-top:-3.8rem;
+            padding:0.3rem;
+            box-sizing: border-box;
+        }
+        .tit{
+            text-align:center;
+            border-bottom:1px solid #ecedf0;
+            padding-bottom:0.3rem;
+            h1{
+                font-size:0.36rem;
+                color:#000;
+            }
+            p{
+                font-size:0.24rem;
+                color:#fc9447;
+            }
+        }
+        .relationList{
+            li{
+               width:50%;
+               float:left;
+                .icon{
+                    width:0.98rem;
+                    height:0.98rem;
+                    margin:0.4rem auto 0;
+                    img{
+                        width:100%;
+                    }
+                }
+                .exp{
+                    text-align: center;
+                    color:#7e6b5a;
+                    font-size:0.28rem;
+                    margin-top:0.16rem;
+                }
+                .nocheck{
+                    width:0.36rem;
+                    height:0.47rem;
+                    margin:0.34rem auto 0;
+                    background:url(./img/nocheck.png) no-repeat left bottom;
+                    background-size:100%;
+                    &.check{
+                        background:url(./img/check.png) no-repeat left top;
+                        background-size:100%;
+                    }
+                }
             }
         }
     }

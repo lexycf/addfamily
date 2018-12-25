@@ -8,7 +8,10 @@ var func={
         selRelationBox:'.selRelationBox',
         clickType:'.clickType',
         selRelationBox:'.selRelationBox',
-        addinfo:'.addinfo'
+        addinfo:'.addinfo',
+        addIcon:'.addIcon',
+        familyInfoList:'.familyInfoList',
+        delBtn:'.delBtn'
     },
     bindEvent:function(){
         $(func.node.conContent)
@@ -21,19 +24,45 @@ var func={
             var relationType=$(this).data('relat');
             var idx=$(func.node.selRelationBox).data('index');
             $(func.node.addinfo).eq(idx).find('.relation').html(relationTxt);
-            console.log(idx);
+            
            //关系1为字女 2为父母 3为爱人 4位其他亲友
            func.paramList[idx]={relationshipVal:relationType} ;
+           console.log(func.paramList);
            
         })
         .delegate(func.node.relation,'click',function(){
             var idx=$(this).parents('.addinfo').data('index');
+            $(func.node.selRelationBox).find('.nocheck').removeClass('check');
             $(func.node.selRelationBox).show().data('index',idx);
 
             
         })
         .delegate(func.node.selRelationBox,'click',function(){
             $(this).hide();
+        })
+        .delegate(func.node.addIcon,'click',function(){
+            var idx=$(func.node.addinfo).last().data('index')+1;
+            var htm='<div class="addinfo" data-index="'+idx+'"><div class="addinfoBox"><div class="inputBox">'+
+                '<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class="relation">请选择</a>'+
+            '</div>'+
+            '<div class="inputBox">'+
+                '<label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">'+
+            '</div>'+
+
+            '<div class="equities">'+
+                    '<h1>可获得的权益</h1>'+
+                    '<ul>'+
+                        '<li><span></span>大病互助最高40万互助金</li>'+
+                        '<li><span></span>意外身故最高20万互助金</li>'+
+                        '<li><span></span>意外医疗最高5万互助金</li>'+
+                    '</ul>'+
+                    '<div class="clears"></div>'+
+                '</div></div><div class="delBox"><div class="delBtn">删除</div></div>'+
+        '</div>';
+            $(func.node.familyInfoList).append(htm);
+        })
+        .delegate(func.node.delBtn,'click',function(){
+            $(this).parents('.addinfo').remove();
         })
     },
     checkAgree:function(clickObj){
