@@ -1,0 +1,32 @@
+html,
+body {
+  background: #f5f5f9;
+}
+.attOffAcc .logoBox img {
+  display: block;
+  width: 1.84rem;
+  margin: 0.4rem auto 0;
+}
+.attOffAcc .logoBox p {
+  font-size: 0.38rem;
+  color: #1b1b1b;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+.attOffAcc .ewmBox img {
+  display: block;
+  width: 4rem;
+  margin: 0.6rem auto 0.3rem;
+}
+.attOffAcc .ewmBox p {
+  text-align: center;
+  color: #816e5e;
+  font-size: 0.24rem;
+}
+.attOffAcc .tips {
+  text-align: center;
+  font-size: 0.26rem;
+  color: #816e5e;
+  line-height: 0.46rem;
+  margin-top: 0.7rem;
+}

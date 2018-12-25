@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="../commonfile/css/reset.css">
+        <script src="../commonfile/js/zepto.min.js"></script>
+        <script src='../commonfile/js/reset.js'></script>
+        <link rel="stylesheet" href="./select.css">
+</head>
+<body>
+    <div class="selectfamily" node-type='con-content'>
+        <div class="banner">
+            <img src="./img/images/banner_02.jpg" alt="">
+        </div>
+        <div class="selfamily">
+            <div class="tit">
+                <h1>选择要加入的家人</h1>
+                <p>您已添加 <span class='familyNum'>0</span> 位家人</p><!-- 本人已加入时提示 -->
+                <p>添加家人 需本人一起加入</p><!-- 本人未加入时提示 -->
+            </div>
+            <div class="selBox">
+                <ul class='ulList'>
+                    <li class='clickType'>
+                        <!-- 本人未加入时展示 -->
+                        <div class="icon"><img src="./img/icon5.png" alt=""></div>
+                        <div class='exp'>本人</div>
+                        <p class='nocheck check'></p>
+                    </li>
+                    <li class='clickType'>
+                        <div class="icon"><img src="./img/icon1.png" alt=""></div>
+                        <div class='exp'>儿女</div>
+                        <p class='nocheck'></p>
+                    </li>
+                    <li  class='clickType'>
+                        <div class="icon"><img src="./img/icon2.png" alt=""></div>
+                        <div class='exp'>父母</div>
+                        <p class='nocheck'></p>
+                    </li>
+                    <li class='clickType'>
+                        <div class="icon"><img src="./img/icon3.png" alt=""></div>
+                        <div class='exp'>爱人</div>
+                        <p class='nocheck'></p>
+                    </li>
+                    <li class='clickType'>
+                        <div class="icon"><img src="./img/icon4.png" alt=""></div>
+                        <div class='exp'>其他亲友</div>
+                        <p class='nocheck'></p>
+                    </li>
+                </ul>
+                <div class="tips">注：岳父岳母属于其他亲友</div>
+            </div>
+        </div>
+        <div class="joinBtn">立即守护家人</div>
+    </div>
+    <script src='./select.js'></script>
+</body>
+</html>

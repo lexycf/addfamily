@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../commonfile/css/reset.css">
+    <script src="../commonfile/js/zepto.min.js"></script>
+    <script src='../commonfile/js/reset.js'></script>
+    <link rel="stylesheet" href="./orderWrite.css">
+</head>
+<body>
+    <div class="orderWrite" node-type="con-content">
+        <div class="addselfInfo">
+            <div class="exp">
+                <h1>请先填写您的个人信息</h1>
+                <p>个人信息严格保密，仅做身份识别</p>
+            </div>
+            <div class="addinfo">
+                <div class="inputBox">
+                    <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;">本人</a>
+                </div>
+                <div class="inputBox">
+                    <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
+                </div>
+
+                <div class="equities">
+                        <h1>可获得的权益</h1>
+                        <ul>
+                            <li>大病互助最高40万互助金</li>
+                            <li>意外身故最高20万互助金</li>
+                            <li>意外医疗最高5万互助金</li>
+                        </ul>
+                        <div class="clears"></div>
+                    </div>   
+            </div>
+            
+        </div>
+        <div class="familyInfo">
+            <h1>你还没有添加家人，为家人添加一份守护</h1>
+            <div class="familyInfoList">
+                <div class="addinfo">
+                    <div class="inputBox">
+                        <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class='relation'>本人</a>
+                    </div>
+                    <div class="inputBox">
+                        <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
+                    </div>
+    
+                    <div class="equities">
+                            <h1>可获得的权益</h1>
+                            <ul>
+                                <li>大病互助最高40万互助金</li>
+                                <li>意外身故最高20万互助金</li>
+                                <li>意外医疗最高5万互助金</li>
+                            </ul>
+                            <div class="clears"></div>
+                        </div>   
+                </div>
+            </div>
+            <div class="addIcon">
+                <img src="./img/addicon.png" alt="">
+                <p>添加家人</p>
+            </div>
+
+            
+        </div>
+        <div class="payInfo">
+            <div class="payMoney">支付xxx元，即可激活所有权益</div>
+            <div class="noc">未填写身份证信息的暂不缴费，补填时缴费</div>
+            <div class="payBtn">立即支付</div>
+            <div class='clause'>
+                <!--0为同意，1为不同意-->
+                <i class="icon-check" id="j_isOpenAutoXubao" data-isagree="0"></i>
+                我同意
+                <a href="javascript:;"  class="ft-block-link" id="j_linkDaikouAgree">《全民互助计划章程》</a>
+                和
+                <a href="javascript:;"  class="ft-block-link" id="j_linkDaikouAgree">《会员公约》</a>
+            </div>
+        </div>
+    </div>
+    <script src="./orderWrite.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+html,
+body {
+  background: #f5f5f9;
+}
+.clears {
+  clear: both;
+}
+.addfamilyInfo {
+  width: 100%;
+  background: url('img/topbg.png') no-repeat;
+  background-size: 100%;
+}
+.addfamilyInfo .addinfo {
+  margin: 0.3rem 0.4rem;
+  padding: 0.5rem 0.4rem;
+  background: #fff;
+  border-radius: 0.3rem;
+}
+.addfamilyInfo .addinfo .inputBox {
+  margin-bottom: 0.4rem;
+}
+.addfamilyInfo .addinfo .inputBox label {
+  color: #7e6b5a;
+  font-size: 0.28rem;
+}
+.addfamilyInfo .addinfo .inputBox .inp {
+  width: 2.3rem;
+  height: 0.48rem;
+  border: none;
+  border-bottom: 1px solid #ecedf0;
+  margin-right: 0.1rem;
+  font-size: 0.3rem;
+}
+.addfamilyInfo .addinfo .inputBox .inp#idcard {
+  width: 4.4rem;
+}
+.addfamilyInfo .addinfo .inputBox a {
+  font-size: 0.28rem;
+  color: #bfbfbf;
+  border: 1px solid #bfbfbf;
+  border-radius: 0.2rem;
+  padding: 0.1rem 0.5rem 0.1rem 0.3rem;
+  white-space: nowrap;
+  float: right;
+  margin-top: -0.14rem;
+}
+.addfamilyInfo .addinfo .inputBox a.relation {
+  position: relative;
+}
+.addfamilyInfo .addinfo .inputBox a.relation:after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: 0.2rem;
+  right: .2rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: .18rem;
+  height: .18rem;
+  border-top: .04rem solid #bfbfbf;
+  border-right: .04rem solid #bfbfbf;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.addfamilyInfo .addinfo .equities h1 {
+  font-size: 0.28rem;
+  color: #1b1b1b;
+  font-weight: normal;
+}
+.addfamilyInfo .addinfo .equities ul {
+  margin-top: 0.32rem;
+}
+.addfamilyInfo .addinfo .equities ul li {
+  color: #7e6b5a;
+  font-size: 0.24rem;
+  list-style-type: disc;
+  float: left;
+  line-height: 0.5rem;
+  margin-left: 0.2rem;
+}
+.addfamilyInfo .addselfInfo .exp {
+  margin: 0 0.4rem;
+  padding: 0.44rem 0.1rem 0;
+}
+.addfamilyInfo .addselfInfo .exp h1 {
+  font-size: 0.38rem;
+  color: #fff;
+  font-weight: normal;
+}
+.addfamilyInfo .addselfInfo .exp p {
+  font-size: 0.24rem;
+  color: #fff;
+  margin-top: 0.18rem;
+}
+.addfamilyInfo .familyInfo h1 {
+  text-align: center;
+  font-size: 0.28rem;
+  color: #1b1b1b;
+  margin: 0.4rem 0;
+  font-weight: bold;
+}
+.addfamilyInfo .familyInfo .addIcon img {
+  display: block;
+  width: 0.76rem;
+  height: 0.76rem;
+  margin: 0 auto;
+}
+.addfamilyInfo .familyInfo .addIcon p {
+  font-size: 0.24rem;
+  color: #7e6b5a;
+  margin-top: 0.1rem;
+  text-align: center;
+}
+.addfamilyInfo .payInfo {
+  margin-top: 0.5rem;
+}
+.addfamilyInfo .payInfo .payMoney {
+  color: #1b1b1b;
+  font-size: 0.28rem;
+  text-align: center;
+}
+.addfamilyInfo .payInfo .noc {
+  font-size: 0.24rem;
+  color: #a0a0a0;
+  text-align: center;
+}
+.addfamilyInfo .payInfo .payBtn {
+  width: 6.9rem;
+  height: 1rem;
+  background: #fb4e37;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.36rem;
+  margin: 0.6rem auto 0.3rem;
+}
+.addfamilyInfo .payInfo .clause {
+  padding: 0 .3rem .6rem .9rem;
+  color: #666;
+  font-size: .24rem;
+  position: relative;
+  line-height: .4rem;
+  /* height: .45rem; */
+}
+.addfamilyInfo .payInfo .clause .icon-check {
+  position: absolute;
+  left: .4rem;
+  top: 0.05rem;
+}
+.addfamilyInfo .payInfo .clause .ft-block-link {
+  color: #00a0e9;
+}
+.addfamilyInfo .payInfo .clause .icon-check {
+  width: .62rem;
+  height: .36rem;
+  display: inline-block;
+  background: url(img/icon-check.png) no-repeat;
+  background-size: .36rem auto;
+}
+.addfamilyInfo .payInfo .clause .icon-check-on {
+  background: url(img/icon-check-on.png) no-repeat;
+  background-size: .36rem auto;
+}
+.addfamilyInfo .selRelationBox {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.addfamilyInfo .selRelationBox .selRelation {
+  width: 5.2rem;
+  height: 7.6rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2.6rem;
+  margin-top: -3.8rem;
+  padding: 0.3rem;
+  box-sizing: border-box;
+}
+.addfamilyInfo .selRelationBox .tit {
+  text-align: center;
+  border-bottom: 1px solid #ecedf0;
+  padding-bottom: 0.3rem;
+}
+.addfamilyInfo .selRelationBox .tit h1 {
+  font-size: 0.36rem;
+  color: #000;
+}
+.addfamilyInfo .selRelationBox .tit p {
+  font-size: 0.24rem;
+  color: #fc9447;
+}
+.addfamilyInfo .selRelationBox .relationList li {
+  width: 50%;
+  float: left;
+}
+.addfamilyInfo .selRelationBox .relationList li .icon {
+  width: 0.98rem;
+  height: 0.98rem;
+  margin: 0.4rem auto 0;
+}
+.addfamilyInfo .selRelationBox .relationList li .icon img {
+  width: 100%;
+}
+.addfamilyInfo .selRelationBox .relationList li .exp {
+  text-align: center;
+  color: #7e6b5a;
+  font-size: 0.28rem;
+  margin-top: 0.16rem;
+}
+.addfamilyInfo .selRelationBox .relationList li .nocheck {
+  width: 0.36rem;
+  height: 0.47rem;
+  margin: 0.34rem auto 0;
+  background: url(img/nocheck.png) no-repeat left bottom;
+  background-size: 100%;
+}
+.addfamilyInfo .selRelationBox .relationList li .nocheck.check {
+  background: url(img/check.png) no-repeat left top;
+  background-size: 100%;
+}

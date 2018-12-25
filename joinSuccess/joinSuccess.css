@@ -1,0 +1,115 @@
+html,
+body {
+  background: #f5f5f9;
+}
+.clears {
+  clear: both;
+}
+.joinSuccess .suucessTop {
+  margin-top: 0.56rem;
+}
+.joinSuccess .suucessTop .joinsuc h1,
+.joinSuccess .suucessTop .joinsuc p {
+  font-size: 0.34rem;
+  color: #1b1b1b;
+  text-align: center;
+}
+.joinSuccess .suucessTop .joinsuc h1 img,
+.joinSuccess .suucessTop .joinsuc p img {
+  display: inline-block;
+  width: 0.68rem;
+  height: 0.68rem;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.joinSuccess .suucessTop .joinsuc p {
+  margin-top: 0.3rem;
+}
+.joinSuccess .suucessTop .ewmBox .imgBox {
+  margin-top: 0.44rem;
+}
+.joinSuccess .suucessTop .ewmBox .imgBox img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+}
+.joinSuccess .suucessTop .ewmBox .imgBox p {
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 0.24rem;
+  margin: 0.3rem 0;
+}
+.joinSuccess .suucessTop .ewmBox .noc {
+  font-size: 0.28rem;
+  color: #1b1b1b;
+  line-height: 0.5rem;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+.joinSuccess .familyInfoStatus ul li {
+  margin-bottom: 0.3rem;
+}
+.joinSuccess .familyInfoStatus ul li .infos {
+  margin: 0 0.28rem;
+  background: #fff;
+  padding: 0.1rem 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+}
+.joinSuccess .familyInfoStatus ul li .infos .infoTop {
+  font-size: 0.36rem;
+  color: #7e6b5a;
+  padding: 0.24rem 0;
+  border-bottom: 1px solid #ecedf0;
+}
+.joinSuccess .familyInfoStatus ul li .infos .infoTop .getequity {
+  float: right;
+  font-size: 0.24rem;
+  color: #1b1b1b;
+  margin-top: 0.1rem;
+}
+.joinSuccess .familyInfoStatus ul li .infos .infoTop span {
+  font-weight: bold;
+}
+.joinSuccess .familyInfoStatus ul li .infos .joinInfo {
+  padding: 0.48rem 0 0.7rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.joinSuccess .familyInfoStatus ul li .infos .joinInfo .joinTime {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font-size: 0.3rem;
+  color: #7e6b5a;
+}
+.joinSuccess .familyInfoStatus ul li .infos .joinInfo .status {
+  display: inline-block;
+  width: 2.1rem;
+  text-align: center;
+  border-left: 1px solid #ecedf0;
+  font-size: 0.36rem;
+  color: #1b1b1b;
+  font-weight: bold;
+}
+.joinSuccess .familyInfoStatus ul li .infos .bt .balance {
+  font-size: 0.38rem;
+  color: #1b1b1b;
+  line-height: 0.6rem;
+  font-weight: bold;
+}
+.joinSuccess .familyInfoStatus ul li .infos .bt .checkMore {
+  float: right;
+  width: 3.3rem;
+  padding: 0.14rem 0;
+  color: #fff;
+  font-size: 0.36rem;
+  text-align: center;
+  background: #ffc659;
+  border-radius: 0.4rem;
+}
