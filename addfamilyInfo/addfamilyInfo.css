@@ -16,8 +16,22 @@ body {
   background: #fff;
   border-radius: 0.3rem;
 }
+.addfamilyInfo .addinfoBox .errorBox {
+  font-size: 0.24rem;
+  color: #ec3947;
+  height: 0.24rem;
+  text-align: center;
+  margin-top: 0.1rem;
+}
 .addfamilyInfo .addinfoBox .inputBox {
   margin-bottom: 0.4rem;
+}
+.addfamilyInfo .addinfoBox .inputBox .inpBox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 .addfamilyInfo .addinfoBox .inputBox label {
   color: #7e6b5a;
@@ -30,6 +44,11 @@ body {
   border-bottom: 1px solid #ecedf0;
   margin-right: 0.1rem;
   font-size: 0.3rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
 .addfamilyInfo .addinfoBox .inputBox .inp#idcard {
   width: 4.4rem;
@@ -41,7 +60,6 @@ body {
   border-radius: 0.2rem;
   padding: 0.1rem 0.5rem 0.1rem 0.3rem;
   white-space: nowrap;
-  float: right;
   margin-top: -0.14rem;
 }
 .addfamilyInfo .addinfoBox .inputBox a.relation {
@@ -111,7 +129,6 @@ body {
   margin-top: 0.18rem;
 }
 .addfamilyInfo .familyInfo h1 {
-  text-align: center;
   font-size: 0.28rem;
   color: #1b1b1b;
   margin: 0.4rem 0;

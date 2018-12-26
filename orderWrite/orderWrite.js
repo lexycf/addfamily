@@ -31,7 +31,7 @@ var func={
             var idx=$(func.node.selRelationBox).data('index');
             console.log(idx);
             console.log(relationTxt);
-            $(func.node.addinfo).eq(idx).find('.relation').html(relationTxt);
+            $('.addinfo[data-index="'+idx+'"]').find('.relation').html(relationTxt);
             
            //关系1为字女 2为父母 3为爱人 4位其他亲友
            func.paramList[idx]={relationshipVal:relationType} ;
@@ -70,7 +70,13 @@ var func={
             $(func.node.familyInfoList).append(htm);
         })
         .delegate(func.node.delBtn,'click',function(){
-            $(this).parents('.addinfo').remove();
+            if($(func.node.addinfo).length<2){
+                toast('请至少添加一位家人');
+                return false;
+            }else{
+                $(this).parents('.addinfo').remove();
+            }
+           
         })
     },
     checkAgree:function(clickObj){

@@ -9,6 +9,8 @@
     <script src="../commonfile/js/zepto.min.js"></script>
     <script src='../commonfile/js/reset.js'></script>
     <link rel="stylesheet" href="./addfamilyInfo.css">
+    <link rel="stylesheet" href="../plugins/toast/toast.css">
+    <script src='../plugins/toast/toast.js'></script>
 </head>
 <body>
     <div class="addfamilyInfo" node-type="con-content">
@@ -25,11 +27,18 @@
                 <div class="addinfo" data-index='0'>
                     <div class="addinfoBox">
                         <div class="inputBox">
-                            <a href="javascript:;" class='relation'>请选择</a>
-                            <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name">
+                            <div class="inpBox">
+                                <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class='relation'>请选择</a>
+                            </div>
+                            <div class="errorBox"></div>
+                            
                         </div>
                         <div class="inputBox">
-                            <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
+                            <div class="inpBox">
+                                <label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">
+                            </div>
+                            <div class="errorBox"></div>
+                            
                         </div>
         
                         <div class="equities" data-index='1'>
@@ -60,7 +69,7 @@
             <div class="payBtn">立即支付</div>
             <div class='clause'>
                 <!--0为同意，1为不同意-->
-                <i class="icon-check" id="j_isOpenAutoXubao" data-isagree="0"></i>
+                <i class="icon-check icon-check-on" id="j_isOpenAutoXubao" data-isagree="0"></i>
                 我同意
                 <a href="javascript:;"  class="ft-block-link" id="j_linkDaikouAgree">《全民互助计划章程》</a>
                 和
