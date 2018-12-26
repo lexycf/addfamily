@@ -191,6 +191,13 @@ body {
 .completeinfo .inputBox .inp#idcard {
   width: 4.4rem;
 }
+.completeinfo .inputBox .errorBox {
+  font-size: 0.24rem;
+  color: #ec3947;
+  height: 0.24rem;
+  text-align: center;
+  margin-top: 0.1rem;
+}
 .completeinfo .equities h1 {
   font-size: 0.28rem;
   color: #1b1b1b;

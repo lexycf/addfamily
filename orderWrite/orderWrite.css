@@ -24,18 +24,28 @@ body {
 }
 .orderWrite .addinfoBox .inputBox {
   margin-bottom: 0.4rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 .orderWrite .addinfoBox .inputBox label {
   color: #7e6b5a;
   font-size: 0.28rem;
 }
 .orderWrite .addinfoBox .inputBox .inp {
-  width: 2.7rem;
+  width: 2.4rem;
   height: 0.48rem;
   border: none;
   border-bottom: 1px solid #ecedf0;
   margin-right: 0.1rem;
   font-size: 0.3rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
 .orderWrite .addinfoBox .inputBox .inp#idcard {
   width: 4.4rem;
@@ -45,7 +55,7 @@ body {
   color: #bfbfbf;
   border: 1px solid #bfbfbf;
   border-radius: 0.2rem;
-  padding: 0.1rem 0.5rem 0.1rem 0.4rem;
+  padding: 0.06rem 0.5rem 0.06rem 0.4rem;
   white-space: nowrap;
 }
 .orderWrite .addinfoBox .inputBox a.relation {
@@ -108,7 +118,7 @@ body {
   color: #fff;
   margin-top: 0.18rem;
 }
-.orderWrite .familyInfo h1 {
+.orderWrite .familyInfo h2 {
   text-align: center;
   font-size: 0.28rem;
   color: #1b1b1b;
