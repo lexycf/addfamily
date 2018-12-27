@@ -1,7 +1,7 @@
 var func={
     node:{
         conContent: '[node-type="con-content"]',
-        idcard:'#idcard',
+        idcard:'.idcard',
         name:'#name',
         iconCheck:'.icon-check',
         relation:'.relation',
@@ -16,10 +16,28 @@ var func={
     bindEvent:function(){
         $(func.node.conContent)
         .delegate(func.node.idcard,'blur',function(){
-            func.checkIdcard($(func.node.idcard));
+            var reg = /^\d{15}(\d{2}[\d|X|x])?$/;
+            var idcardVal=$(this).val();
+            if(!reg.test(idcardVal)){
+                $(this).parent().siblings('.errorBox').html('请输入正确的身份证号码');
+            }
+        })
+        .delegate(func.node.idcard,'focus',function(){
+            
+            $(this).parent().siblings('.errorBox').html('');
+         
+        })
+        .delegate(func.node.name,'focus',function(){
+            $(this).parent().siblings('.errorBox').html('');
+         
         })
         .delegate(func.node.name,'blur',function(){
-            func.checkName($(func.node.name));
+            var name=$(this).val();
+            if(name==""){
+                $(this).parent().siblings('.errorBox').html('姓名不能为空');
+            }
+           
+         
         })
         .delegate(func.node.iconCheck,'click',function(){
             func.checkAgree($(this));
@@ -50,12 +68,12 @@ var func={
         })
         .delegate(func.node.addIcon,'click',function(){
             var idx=$(func.node.addinfo).last().data('index')+1;
-            var htm='<div class="addinfo" data-index="'+idx+'"><div class="addinfoBox"><div class="inputBox">'+
-                '<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class="relation">请选择</a>'+
-            '</div>'+
-            '<div class="inputBox">'+
-                '<label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard">'+
-            '</div>'+
+            var htm='<div class="addinfo" data-index="'+idx+'"><div class="addinfoBox"><div class="inputBox"><div class="inpBox">'+
+                '<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class="relation">请选择</a></div>'+
+            '<div class="errorBox"></div></div>'+
+            '<div class="inputBox"><div class="inpBox">'+
+                '<label for="">身份证号：</label><input type="text" class="inp idcard" id="idcard"></div>'+
+            '<div class="errorBox"></div></div>'+
 
             '<div class="equities">'+
                     '<h1>可获得的权益</h1>'+
