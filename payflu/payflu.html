@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../commonfile/css/reset.css">
+    <script src="../commonfile/js/zepto.min.js"></script>
+    <script src='../commonfile/js/reset.js'></script>
+    <link rel="stylesheet" href="./payflu.css">
+    <link rel="stylesheet" href="../plugins/toast/toast.css">
+    <script src='../plugins/toast/toast.js'></script>
+</head>
+</head>
+<body>
+    <div class="payflubox" node-type="con-content">
+        <div class="payinfo">
+            <div class="payinfo_tit">仅需一步加入</div>
+            <div class="payinfo_txt">
+                <label for="" class="lab">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label><input type="text" placeholder="请填写真实姓名" class="inp name">
+            </div>
+            <div class="payinfo_txt">
+                <label for="" class="lab">身份证</label><input type="text" placeholder="请输入你的身份证号" class="inp idcard">
+            </div>
+            <div class="payinfo_txt">
+                <label for="" class="lab">手机号</label><input type="text" placeholder="输入你的手机号" class="inp phone">
+            </div>
+        </div>
+        <div class="payplan">
+            <div class="payplan_tit">请选择您要加入的互助计划</div>
+            <div class="payplan_cont">
+                <ul>
+                    <li class="selbox">
+                        <span></span><a href="javascript:;">大病互助</a>
+                    </li>
+                    <li class="selbox">
+                        <span></span><a href="javascript:;">意外医疗互助子计划（18-65周岁）</a>
+                    </li>
+                    <li class="selbox">
+                        <span></span><a href="javascript:;">意外身故及伤残子计划（18-65周岁）</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="paybtn">3元加入互助</div>
+        <div class="footer">
+            我已阅读并同意<i>《健康告知》</i>和<i>《健康告知》</i>条款<br/>并承诺加入是身体健康，无癌症或其他重大病史
+        </div>
+        <div class="hidebox">
+            <div class="confirmbox">
+                <div class="confirm_tit">你只可加入以下互助计划：</div>
+                <div class="confirm_cont">
+                    <ul>
+                        <li>·大病互助</li>
+                        <li>·意外医疗互助子计划（18-65周岁）</li>
+                    </ul>
+                </div>
+                <div class="confirm_btn">
+                    <div class="btn_left">重新选择</div>
+                    <div class="btn_right">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./payflu.js"></script>
+</body>
+</html>
