@@ -24,17 +24,26 @@ body {
 }
 .orderWrite .addinfoBox .inputBox {
   margin-bottom: 0.4rem;
+}
+.orderWrite .addinfoBox .inputBox .errorBox {
+  font-size: 0.24rem;
+  color: #ec3947;
+  height: 0.24rem;
+  text-align: center;
+  margin-top: 0.1rem;
+}
+.orderWrite .addinfoBox .inputBox .inpBox {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
-.orderWrite .addinfoBox .inputBox label {
+.orderWrite .addinfoBox .inputBox .inpBox label {
   color: #7e6b5a;
   font-size: 0.28rem;
 }
-.orderWrite .addinfoBox .inputBox .inp {
+.orderWrite .addinfoBox .inputBox .inpBox .inp {
   width: 2.4rem;
   height: 0.48rem;
   border: none;
@@ -47,10 +56,10 @@ body {
   -webkit-flex: 1;
   flex: 1;
 }
-.orderWrite .addinfoBox .inputBox .inp#idcard {
+.orderWrite .addinfoBox .inputBox .inpBox .inp#idcard {
   width: 4.4rem;
 }
-.orderWrite .addinfoBox .inputBox a {
+.orderWrite .addinfoBox .inputBox .inpBox a {
   font-size: 0.28rem;
   color: #bfbfbf;
   border: 1px solid #bfbfbf;
@@ -58,10 +67,10 @@ body {
   padding: 0.06rem 0.5rem 0.06rem 0.4rem;
   white-space: nowrap;
 }
-.orderWrite .addinfoBox .inputBox a.relation {
+.orderWrite .addinfoBox .inputBox .inpBox a.relation {
   position: relative;
 }
-.orderWrite .addinfoBox .inputBox a.relation:after {
+.orderWrite .addinfoBox .inputBox .inpBox a.relation:after {
   position: absolute;
   content: '';
   display: inline-block;
