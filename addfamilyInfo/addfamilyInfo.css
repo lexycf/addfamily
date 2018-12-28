@@ -178,13 +178,13 @@ body {
   line-height: .4rem;
   /* height: .45rem; */
 }
+.addfamilyInfo .payInfo .clause .ft-block-link {
+  color: #00a0e9;
+}
 .addfamilyInfo .payInfo .clause .icon-check {
   position: absolute;
   left: .4rem;
   top: 0.05rem;
-}
-.addfamilyInfo .payInfo .clause .ft-block-link {
-  color: #00a0e9;
 }
 .addfamilyInfo .payInfo .clause .icon-check {
   width: .62rem;

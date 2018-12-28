@@ -30,22 +30,23 @@
         <div class="payplan">
             <div class="payplan_tit">请选择您要加入的互助计划</div>
             <div class="payplan_cont">
-                <ul>
+                <ul class='payplanList'>
                     <li class="selbox">
-                        <span></span><a href="javascript:;">大病互助</a>
+                        <span class='checkBox nocheck' data-status='true'></span><a href="javascript:;">大病互助</a>
                     </li>
                     <li class="selbox">
-                        <span></span><a href="javascript:;">意外医疗互助子计划（18-65周岁）</a>
+                        <span class='checkBox nocheck' data-status='true'></span><a href="javascript:;">意外医疗互助子计划（18-65周岁）</a>
                     </li>
                     <li class="selbox">
-                        <span></span><a href="javascript:;">意外身故及伤残子计划（18-65周岁）</a>
+                        <span class='checkBox nocheck' data-status='true'></span><a href="javascript:;">意外身故及伤残子计划（18-65周岁）</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="paybtn">3元加入互助</div>
+        <div class="paybtn ">3元加入互助</div>
         <div class="footer">
-            我已阅读并同意<i>《健康告知》</i>和<i>《健康告知》</i>条款<br/>并承诺加入是身体健康，无癌症或其他重大病史
+            <b class="icon-check icon-check-on" id="j_isOpenAutoXubao" data-isagree="0"></b>
+            我已阅读并同意<i>《健康告知》</i>和<i>《互助公约》</i>条款<br/>并承诺加入是身体健康，无癌症或其他重大病史
         </div>
         <div class="hidebox">
             <div class="confirmbox">
@@ -54,6 +55,7 @@
                     <ul>
                         <li>·大病互助</li>
                         <li>·意外医疗互助子计划（18-65周岁）</li>
+                        <li>·意外身故及伤残子计划（18-65周岁）</li>
                     </ul>
                 </div>
                 <div class="confirm_btn">

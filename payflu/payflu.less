@@ -55,12 +55,23 @@ html,body{
                         vertical-align: middle;
                         margin-right: 0.3rem;
                         margin-top:-3px;
-                        background: url(../payflu/img/check_on.png) no-repeat left center;
-                        background-size: 100%;
+                        
+                        
+                        &.nocheck{
+                            background: url(../payflu/img/nocheck.png) no-repeat left center;
+                            background-size: 100%;
+                        }
+                        &.checkon{
+                            background: url(../payflu/img/check_on.png) no-repeat left center;
+                            background-size: 100%;
+                        }
                     }
                     a{
                         font-size: 0.3rem;
                         color: #666;
+                        &.greyTxt{
+                            color:#afafaf;
+                        }
                     }
                 }
             }
@@ -69,18 +80,44 @@ html,body{
     .paybtn{
             width:6.5rem;
             height:1rem;
-            background:#fb4e37;
+            background:#b5b5b5;
             border-radius:0.5rem;
             color:#fff;
             text-align:center;
             line-height: 1rem;
             font-size:0.36rem;
             margin:0.6rem auto 0.3rem;
+            &.subbtn{
+                background: #fb4e37;
+            }
     }
     .footer{
         text-align: center;
         font-size: 0.25rem;
         color: #5b5b5b;
+        position: relative;
+        .icon-check {
+            position: absolute;
+            left: .4rem;
+            top: 0.05rem;
+        }
+
+       
+        .icon-check {
+            width: .62rem;
+            height: .36rem;
+            display: inline-block;
+            background: url(./img/icon-check.png) no-repeat;
+            background-size: .36rem auto;
+        }
+    
+        .icon-check-on {
+            width: .62rem;
+            height: .36rem;
+            display: inline-block;
+            background: url(./img/icon-check-on.png) no-repeat;
+            background-size: .36rem auto;
+        }
         i{
             font-style: normal;
             color: #fd6034;
