@@ -97,12 +97,18 @@ var func={
         }
     },
    selsecurity:function(userAge){
-       console.log(userAge);
-    if(userAge>=18 && userAge<=65){
-        $(func.node.payplanList).find('.checkBox').addClass('checkon').data('status',true);
-    }else{
-        $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
-    }
+
+        console.log(userAge);
+        if(userAge>=0 && userAge<18){
+            $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
+        }
+        if(userAge>=18 && userAge<=60){
+            $(func.node.payplanList).find('.checkBox').addClass('checkon').data('status',true);
+        }else if(userAge>60 && userAge<=65){
+            $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
+        }else{
+            toast('该用户不符合加入条件');
+        }
    },
    checkInfo:function(){
        var names=func.node.namestatus;
