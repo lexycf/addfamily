@@ -116,18 +116,18 @@ var func={
    selsecurity:function(userAge){
         console.log(userAge);
         if(userAge>=0 && userAge<18){
+            console.log(222);
             func.node.sickstatus=true;
             $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
-        }
-        if(userAge>=18 && userAge<=60){
+        }else if(userAge>=18 && userAge<=60){
             $(func.node.payplanList).find('.checkBox').addClass('checkon').data('status',true);
             func.node.sickstatus=true;
         }else if(userAge>60 && userAge<=65){
             $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
             func.node.sickstatus=true;
         }else{
-            $(func.node.payplanList).find('.checkBox').removeClass('checkon nocheck').data('status',false);
-            toast('该用户不符合加入条件');
+            $(func.node.payplanList).find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
+            toast('该用户不符合加入条件111');
             func.node.sickstatus=false;
         }
         //410526192310150088

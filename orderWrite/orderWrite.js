@@ -11,7 +11,8 @@ var func={
         addinfo:'.addinfo',
         addIcon:'.addIcon',
         familyInfoList:'.familyInfoList',
-        delBtn:'.delBtn'
+        delBtn:'.delBtn',
+        hideBox:'.hideBox'
     },
     bindEvent:function(){
         $(func.node.conContent)
@@ -67,7 +68,12 @@ var func={
             $(this).hide();
         })
         .delegate(func.node.addIcon,'click',function(){
+            $(func.node.familyInfoList).css({
+                'height':'auto'
+            });
             var idx=$(func.node.addinfo).last().data('index')+1;
+            
+            $(func.node.hideBox).hide();
             var htm='<div class="addinfo" data-index="'+idx+'"><div class="addinfoBox"><div class="inputBox"><div class="inpBox">'+
                 '<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class="relation">请选择</a></div>'+
             '<div class="errorBox"></div></div>'+
