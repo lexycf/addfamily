@@ -14,6 +14,10 @@ var func={
         idcardstatus:false,
         phonestatus:false,
         iconCheck:'.icon-check',
+        confirmUl:'.confirmUl',
+        hidebox:'.hidebox',
+        resetSel:'.resetSel',
+        cinfrirmBtn:'.cinfrirmBtn'
     },
    bindEvent:function(){
         $(func.node.conContent)
@@ -22,7 +26,6 @@ var func={
         })
         .delegate(func.node.name,'blur',function(){
             var nameval=$(this).val();
-            console.log(nameval);
             if(nameval==''){
                 toast('请输入姓名');
                 func.node.namestatus=false;
@@ -42,8 +45,6 @@ var func={
                 toast('您的年龄不符合该保障');
             }
             
-
-            console.log(111);
         })
        
 
@@ -86,8 +87,19 @@ var func={
             if(!$(func.node.iconCheck).hasClass('icon-check-on')){
                 toast('请同意健康告知和互助共约');
                 return false;
+            }else{
+                func.confirmSelShow();
             }
+
         })
+        .delegate(func.node.resetSel,'click',function(){
+            $(func.node.hidebox).hide();
+        })
+        .delegate(func.node.cinfrirmBtn,'click',function(){
+            //调用提交接口
+            alert('提交');
+        })
+      
    },
    checkAgree:function(clickObj){
         if(clickObj.hasClass('icon-check-on')){
@@ -97,7 +109,6 @@ var func={
         }
     },
    selsecurity:function(userAge){
-
         console.log(userAge);
         if(userAge>=0 && userAge<18){
             $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
@@ -109,6 +120,21 @@ var func={
         }else{
             toast('该用户不符合加入条件');
         }
+        
+   },
+   confirmSelShow:function(){
+       $(func.node.confirmUl).find('li').hide();
+    var selectedLi=[];
+        var selectedBox=$(func.node.payplanList).find('li');
+        for(var i=0;i<selectedBox.length;i++){
+            if(selectedBox.eq(i).find('.checkBox').hasClass('checkon')){
+                selectedLi.push(i);
+            }
+        }
+        for(var j=0;j<selectedLi.length;j++){
+            $(func.node.confirmUl).find('li').eq(selectedLi[j]).show();
+        }
+        $(func.node.hidebox).show();
    },
    checkInfo:function(){
        var names=func.node.namestatus;
@@ -150,6 +176,7 @@ var func={
     },
    init:function(){
         func.bindEvent();
+        
    },
 }
 func.init();

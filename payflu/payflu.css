@@ -123,8 +123,8 @@ body {
   display: none;
 }
 .payflubox .hidebox .confirmbox {
-  margin: 0.3rem 0.3rem;
-  padding: 0.3rem 0.3rem;
+  margin: 0.3rem;
+  padding: 0.3rem 0.3rem 0 0.3rem;
   background: #fff;
   border-radius: 0.3rem;
   box-sizing: border-box;
@@ -141,10 +141,14 @@ body {
 .payflubox .hidebox .confirmbox .confirm_cont {
   padding-left: 0.3rem;
 }
+.payflubox .hidebox .confirmbox .confirm_cont ul {
+  padding: 0.2rem 0;
+}
 .payflubox .hidebox .confirmbox .confirm_cont ul li {
   font-size: 0.34rem;
   color: #656261;
   margin-bottom: 0.25rem;
+  display: none;
 }
 .payflubox .hidebox .confirmbox .confirm_btn {
   border-top: 1px solid #f5f5f9;
@@ -166,6 +170,7 @@ body {
   text-align: center;
   font-weight: bold;
   line-height: 1rem;
+  border-right: 1px solid #f5f5f9;
 }
 .payflubox .hidebox .confirmbox .confirm_btn .btn_right {
   box-flex: 1;
