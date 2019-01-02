@@ -10,9 +10,11 @@ var func={
         selRelationBox:'.selRelationBox',
         addinfo:'.addinfo',
         addIcon:'.addIcon',
+        addbox:'.addbox',
         familyInfoList:'.familyInfoList',
         delBtn:'.delBtn',
-        hideBox:'.hideBox'
+        hideBox:'.hideBox',
+        showFamily:'.showFamily'
     },
     bindEvent:function(){
         $(func.node.conContent)
@@ -22,6 +24,15 @@ var func={
             if(!reg.test(idcardVal)){
                 $(this).parent().siblings('.errorBox').html('请输入正确的身份证号码');
             }
+        })
+        .delegate(func.node.showFamily,'click',function(){
+            $(func.node.familyInfoList).css({
+                'height':'auto'
+            });
+        
+            $(func.node.hideBox).hide();
+            $(this).hide();
+           
         })
         .delegate(func.node.idcard,'focus',function(){
             
@@ -67,13 +78,8 @@ var func={
         .delegate(func.node.selRelationBox,'click',function(){
             $(this).hide();
         })
-        .delegate(func.node.addIcon,'click',function(){
-            $(func.node.familyInfoList).css({
-                'height':'auto'
-            });
+        .delegate(func.node.addbox,'click',function(){
             var idx=$(func.node.addinfo).last().data('index')+1;
-            
-            $(func.node.hideBox).hide();
             var htm='<div class="addinfo" data-index="'+idx+'"><div class="addinfoBox"><div class="inputBox"><div class="inpBox">'+
                 '<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class="relation">请选择</a></div>'+
             '<div class="errorBox"></div></div>'+
