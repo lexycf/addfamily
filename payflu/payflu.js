@@ -13,6 +13,7 @@ var func={
         namestatus:false,
         idcardstatus:false,
         phonestatus:false,
+        sickstatus:false,
         iconCheck:'.icon-check',
         confirmUl:'.confirmUl',
         hidebox:'.hidebox',
@@ -84,8 +85,12 @@ var func={
             func.checkInfo();
         })
         .delegate(func.node.subbtn,'click',function(){
+            var sickstatus=func.node.sickstatus;
             if(!$(func.node.iconCheck).hasClass('icon-check-on')){
                 toast('请同意健康告知和互助共约');
+                return false;
+            }else if(!sickstatus){
+                toast('您不符合加入条件,请核对身份证号码');
                 return false;
             }else{
                 func.confirmSelShow();
@@ -111,15 +116,21 @@ var func={
    selsecurity:function(userAge){
         console.log(userAge);
         if(userAge>=0 && userAge<18){
+            func.node.sickstatus=true;
             $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
         }
         if(userAge>=18 && userAge<=60){
             $(func.node.payplanList).find('.checkBox').addClass('checkon').data('status',true);
+            func.node.sickstatus=true;
         }else if(userAge>60 && userAge<=65){
             $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
+            func.node.sickstatus=true;
         }else{
+            $(func.node.payplanList).find('.checkBox').removeClass('checkon nocheck').data('status',false);
             toast('该用户不符合加入条件');
+            func.node.sickstatus=false;
         }
+        //410526192310150088
         
    },
    confirmSelShow:function(){
