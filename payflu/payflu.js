@@ -114,22 +114,29 @@ var func={
         }
     },
    selsecurity:function(userAge){
-        console.log(userAge);
-        if(userAge>=0 && userAge<18){
-            console.log(222);
-            func.node.sickstatus=true;
-            $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
-        }else if(userAge>=18 && userAge<=60){
-            $(func.node.payplanList).find('.checkBox').addClass('checkon').data('status',true);
-            func.node.sickstatus=true;
-        }else if(userAge>60 && userAge<=65){
-            $(func.node.payplanList).find('.selbox').eq(0).find('.checkBox').addClass('checkon').data('status',true).parent().siblings().find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
-            func.node.sickstatus=true;
-        }else{
-            $(func.node.payplanList).find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
-            toast('该用户不符合加入条件111');
-            func.node.sickstatus=false;
-        }
+        //console.log(typeof(userAge));
+        var minage='',
+            maxage='';
+        var elem=$(func.node.payplanList).find('.selbox');
+            for(var i=0;i<elem.length;i++){
+                minage=parseInt(elem.eq(i).find('.checkBox').data('minage'));
+                maxage=parseInt(elem.eq(i).find('.checkBox').data('maxage'));
+                //console.log(minage+'_'+maxage+'_'+userAge);
+                if(userAge>=minage && userAge<=maxage){
+                    elem.eq(i).find('.checkBox').addClass('checkon').data('status',true).siblings().removeClass('greyTxt');
+                }else{
+                    elem.eq(i).find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
+                }
+            }
+            var checkonElem=$(func.node.checkon);
+            console.log(checkonElem.length);
+            if(checkonElem.length>0){
+                func.node.sickstatus=true;
+            }else{
+                func.node.sickstatus=false;
+                toast('您不符合加入条件，请核对身份证号码');
+            }
+
         //410526192310150088
         
    },
