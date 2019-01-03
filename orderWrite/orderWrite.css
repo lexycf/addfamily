@@ -88,6 +88,12 @@ body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+.orderWrite .addinfoBox .equities .nottip {
+  text-align: center;
+  margin: 0.1rem 0;
+  color: #fc9447;
+  font-size: 0.24rem;
+}
 .orderWrite .addinfoBox .equities h1 {
   font-size: 0.28rem;
   color: #1b1b1b;
@@ -102,6 +108,12 @@ body {
   float: left;
   line-height: 0.5rem;
   margin-left: 0.1rem;
+}
+.orderWrite .addinfoBox .equities ul li.greyTxt {
+  color: #c9c9c9;
+}
+.orderWrite .addinfoBox .equities ul li.fangai {
+  display: none;
 }
 .orderWrite .addinfoBox .equities ul li span {
   display: inline-block;

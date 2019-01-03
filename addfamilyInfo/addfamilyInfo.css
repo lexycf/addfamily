@@ -83,6 +83,12 @@ body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+.addfamilyInfo .addinfoBox .equities .nottip {
+  text-align: center;
+  margin: 0.1rem 0;
+  color: #fc9447;
+  font-size: 0.24rem;
+}
 .addfamilyInfo .addinfoBox .equities h1 {
   font-size: 0.28rem;
   color: #1b1b1b;
@@ -97,6 +103,12 @@ body {
   float: left;
   line-height: 0.5rem;
   margin-left: 0.1rem;
+}
+.addfamilyInfo .addinfoBox .equities ul li.greyTxt {
+  color: #c9c9c9;
+}
+.addfamilyInfo .addinfoBox .equities ul li.fangai {
+  display: none;
 }
 .addfamilyInfo .addinfoBox .equities ul li span {
   display: inline-block;

@@ -19,7 +19,7 @@
                 <h1>请先填写您的个人信息</h1>
                 <p>个人信息严格保密，仅做身份识别</p>
             </div>
-            <div class="addinfos">
+            <div class="addinfos addinfo">
                 <div class="addinfoBox">
                     <div class="inputBox">
                         <div class="inpBox">
@@ -38,10 +38,10 @@
 
                     <div class="equities">
                         <h1>可获得的权益</h1>
-                        <ul>
-                            <li><span></span>大病互助最高40万互助金</li>
-                            <li><span></span>意外身故最高20万互助金</li>
-                            <li><span></span>意外医疗最高5万互助金</li>
+                        <ul class='equitiesList'>
+                            <li data-minage='0' data-maxage='60' data-sicktype='dabing'><span></span>大病互助最高40万互助金</li>
+                            <li data-minage='18' data-maxage='65' data-sicktype='yiwai'><span></span>意外身故最高20万互助金</li>
+                            <li data-minage="18" data-maxage="65" data-sicktype='yiwai'><span></span>意外医疗最高5万互助金</li>
                         </ul>
                         <div class="clears"></div>
                     </div>  
@@ -50,13 +50,13 @@
             
         </div>
         <div class="familyInfo">
-            <h2>你还没有添加家人，为家人添加一份守护</h2>
+            <h2 class='addfamilyTip'>你还没有添加家人，为家人添加一份守护</h2>
             <div class="familyInfoList">
                 <div class="addinfo" data-index="0">
                     <div class="addinfoBox">
                         <div class="inputBox">
                             <div class="inpBox">
-                                <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class='relation'>请选择</a>
+                                <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class='relation' data-relationNum='0'>请选择</a>
                             </div>
                             <div class="errorBox"></div>
                         </div>
@@ -70,12 +70,14 @@
         
                         <div class="equities">
                             <h1>可获得的权益</h1>
-                            <ul>
-                                <li><span></span>大病互助最高40万互助金</li>
-                                <li><span></span>意外身故最高20万互助金</li>
-                                <li><span></span>意外医疗最高5万互助金</li>
+                            <ul class='equitiesList'>
+                                <li class='fangai' data-sicktype="fangai"><span></span>老年防癌互助权益</li>
+                                <li data-minage='0' data-maxage='60' data-sicktype='dabing'><span></span>大病互助最高40万互助金</li>
+                                <li data-minage='18' data-maxage='65' data-sicktype='yiwai'><span></span>意外身故最高20万互助金</li>
+                                <li data-minage='18' data-maxage='65' data-sicktype='yiwai'><span></span>意外医疗最高5万互助金</li>
                             </ul>
                             <div class="clears"></div>
+                            <div class="nottip"></div>
                         </div>   
                     </div>
                     <div class="delBox"><div class="delBtn">删除</div></div>
@@ -138,6 +140,7 @@
                 </div>
             </div>
     </div>
+    <script src='../plugins/checkform/checkform.js'></script>
     <script src="./orderWrite.js"></script>
 </body>
 </html>

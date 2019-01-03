@@ -2,7 +2,7 @@ var func={
     node:{
         conContent: '[node-type="con-content"]',
         idcard:'.idcard',
-        name:'#name',
+        name:'.name',
         iconCheck:'.icon-check',
         relation:'.relation',
         selRelationBox:'.selRelationBox',
@@ -14,21 +14,27 @@ var func={
         familyInfoList:'.familyInfoList',
         delBtn:'.delBtn',
         hideBox:'.hideBox',
-        showFamily:'.showFamily'
+        showFamily:'.showFamily',
+        addfamilyTip:'.addfamilyTip',
+        nottip:'.nottip'
     },
     bindEvent:function(){
         $(func.node.conContent)
         .delegate(func.node.idcard,'blur',function(){
             var reg = /^\d{15}(\d{2}[\d|X|x])?$/;
             var idcardVal=$(this).val();
+            var age='';
             if(!reg.test(idcardVal)){
                 $(this).parent().siblings('.errorBox').html('请输入正确的身份证号码');
+            }else{
+                func.equitiescheck($(this));
             }
         })
         .delegate(func.node.showFamily,'click',function(){
             $(func.node.familyInfoList).css({
                 'height':'auto'
             });
+            $(func.node.addfamilyTip).hide();
         
             $(func.node.hideBox).hide();
             $(this).hide();
@@ -59,13 +65,13 @@ var func={
             var relationTxt=$(this).find('.exp').text();
             var relationType=$(this).data('relat');
             var idx=$(func.node.selRelationBox).data('index');
-            console.log(idx);
-            console.log(relationTxt);
-            $('.addinfo[data-index="'+idx+'"]').find('.relation').html(relationTxt);
+           
+            $('.addinfo[data-index="'+idx+'"]').find('.relation').html(relationTxt).data('relationNum',relationType);
+            func.equitiescheck($('.addinfo[data-index="'+idx+'"]').find('.relation'));
             
            //关系1为字女 2为父母 3为爱人 4位其他亲友
            func.paramList[idx]={relationshipVal:relationType} ;
-           console.log(func.paramList);
+           //console.log(func.paramList);
            
         })
         .delegate(func.node.relation,'click',function(){
@@ -79,7 +85,14 @@ var func={
             $(this).hide();
         })
         .delegate(func.node.addbox,'click',function(){
-            var idx=$(func.node.addinfo).last().data('index')+1;
+            var idx='';
+            if($(func.node.addinfo).length<1){
+                idx=0;
+            }else{
+                idx=$(func.node.addinfo).last().data('index')+1;
+            }
+            
+            
             var htm='<div class="addinfo" data-index="'+idx+'"><div class="addinfoBox"><div class="inputBox"><div class="inpBox">'+
                 '<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" class="inp name" id="name"><a href="javascript:;" class="relation">请选择</a></div>'+
             '<div class="errorBox"></div></div>'+
@@ -89,25 +102,87 @@ var func={
 
             '<div class="equities">'+
                     '<h1>可获得的权益</h1>'+
-                    '<ul>'+
-                        '<li><span></span>大病互助最高40万互助金</li>'+
-                        '<li><span></span>意外身故最高20万互助金</li>'+
-                        '<li><span></span>意外医疗最高5万互助金</li>'+
+                    '<ul class="equitiesList">'+
+                    '<li class="fangai" data-sicktype="fangai"><span></span>老年防癌互助权益</li>'+
+                        '<li data-minage="0" data-maxage="60" data-sicktype="dabing"><span></span>大病互助最高40万互助金</li>'+
+                        '<li data-minage="18" data-maxage="65" data-sicktype="yiwai"><span></span>意外身故最高20万互助金</li>'+
+                        '<li data-minage="18" data-maxage="65" data-sicktype="yiwai"><span></span>意外医疗最高5万互助金</li>'+
                     '</ul>'+
                     '<div class="clears"></div>'+
+                    '<div class="nottip"></div>'+
                 '</div></div><div class="delBox"><div class="delBtn">删除</div></div>'+
         '</div>';
             $(func.node.familyInfoList).append(htm);
+            if($(func.node.addinfo).length<1){
+                $(func.node.addfamilyTip).show();
+            }else{
+                $(func.node.addfamilyTip).hide();
+            }
         })
         .delegate(func.node.delBtn,'click',function(){
-            if($(func.node.addinfo).length<2){
-                toast('请至少添加一位家人');
-                return false;
-            }else{
-                $(this).parents('.addinfo').remove();
+            $(this).parents('.addinfo').remove();
+            if($(func.node.addinfo).length<1){
+                $(func.node.addfamilyTip).show();
             }
-           
         })
+    },
+    equitiescheck:function(userBox){
+        //140424200804194828
+        //140424195704194828
+        //140424199604194828
+        console.log(userBox);
+        var ele=userBox.parents('.addinfo');
+        var userAge=GetAge(ele.find('.idcard').val());
+        var relationType=ele.find('.relation').data('relationNum')
+        var elemUl=userBox.parents('.addinfo').find('.equitiesList');
+        var minage='',
+            maxage='',
+            sicktype='';
+        var elemlI=elemUl.find('li');
+
+        //初始化
+        elemUl.find('.fangai').hide().siblings().show();
+        ele.find('.nottip').html('');
+
+        for(var i=0;i<elemlI.length;i++){
+            minage=parseInt(elemlI.eq(i).data('minage'));
+            maxage=parseInt(elemlI.eq(i).data('maxage'));
+            sicktype=elemlI.eq(i).data('sicktype');
+            console.log(minage+'_'+maxage+'_'+userAge);
+
+            if(relationType!=4){
+                if(userAge<=60){
+                    if(userAge>=minage && userAge<=maxage){
+                        elemlI.eq(i).removeClass('greyTxt');
+                    }else{
+                        elemlI.eq(i).addClass('greyTxt');
+                    }
+                }
+                
+            }else{
+                if(sicktype=='yiwai'){
+                    elemlI.eq(i).addClass('greyTxt');
+                }else{
+                    elemlI.eq(i).removeClass('greyTxt');
+                }
+                
+
+            }
+            
+        }
+        if(relationType==4){
+            ele.find('.nottip').html('（抱歉，您不能为其他亲友代管意外互助计划）');
+        }else{
+            if(userAge<=60){
+                if(elemUl.find('li[data-sicktype="yiwai"]').hasClass('greyTxt')){
+                    ele.find('.nottip').html('（抱歉，您家人年龄超出范围不能获得意外互助权益）');
+                }
+                
+            }else{
+                elemUl.find('.fangai').show().siblings().hide();
+                ele.find('.nottip').html('（60岁以上的会员可参与老年防癌互助计划）');
+            }
+        }
     },
     checkAgree:function(clickObj){
         if(clickObj.hasClass('icon-check-on')){
