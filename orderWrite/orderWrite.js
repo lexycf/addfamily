@@ -127,9 +127,6 @@ var func={
         })
     },
     equitiescheck:function(userBox){
-        //140424200804194828
-        //140424195704194828
-        //140424199604194828
         console.log(userBox);
         var ele=userBox.parents('.addinfo');
         var userAge=GetAge(ele.find('.idcard').val());
