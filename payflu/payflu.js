@@ -123,7 +123,7 @@ var func={
                 maxage=parseInt(elem.eq(i).find('.checkBox').data('maxage'));
                 //console.log(minage+'_'+maxage+'_'+userAge);
                 if(userAge>=minage && userAge<=maxage){
-                    elem.eq(i).find('.checkBox').addClass('checkon').data('status',true).siblings().removeClass('greyTxt');
+                    elem.eq(i).find('.checkBox').addClass('nocheck checkon').data('status',true).siblings().removeClass('greyTxt');
                 }else{
                     elem.eq(i).find('.checkBox').removeClass('checkon nocheck').data('status',false).siblings().addClass('greyTxt');
                 }
