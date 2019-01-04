@@ -55,7 +55,7 @@ var func={
                     '<h1>可获得的权益</h1>'+
                     '<ul class="equitiesList">'+
                     '<li class="fangai" data-sicktype="fangai"><span></span>老年防癌互助权益</li>'+
-                        '<li data-minage="0" data-maxage="60" data-sicktype="dabing"><span></span>大病互助最高40万互助金</li>'+
+                        '<li class="dabing" data-minage="0" data-maxage="60" data-sicktype="dabing"><span></span>大病互助最高40万互助金</li>'+
                         '<li data-minage="18" data-maxage="65" data-sicktype="yiwai"><span></span>意外身故最高20万互助金</li>'+
                         '<li data-minage="18" data-maxage="65" data-sicktype="yiwai"><span></span>意外医疗最高5万互助金</li>'+
                     '</ul>'+
@@ -123,12 +123,10 @@ var func={
             console.log(minage+'_'+maxage+'_'+userAge);
 
             if(relationType!=4){
-                if(userAge<=60){
-                    if(userAge>=minage && userAge<=maxage){
-                        elemlI.eq(i).removeClass('greyTxt');
-                    }else{
-                        elemlI.eq(i).addClass('greyTxt');
-                    }
+                if(userAge>=minage && userAge<=maxage){
+                    elemlI.eq(i).removeClass('greyTxt');
+                }else{
+                    elemlI.eq(i).addClass('greyTxt');
                 }
                 
             }else{
@@ -137,8 +135,6 @@ var func={
                 }else{
                     elemlI.eq(i).removeClass('greyTxt');
                 }
-                
-
             }
             
         }
@@ -146,12 +142,13 @@ var func={
             ele.find('.nottip').html('（抱歉，您不能为其他亲友代管意外互助计划）');
         }else{
             if(userAge<=60){
+                $('.fangai').hide().siblings('.dabing').show();
                 if(elemUl.find('li[data-sicktype="yiwai"]').hasClass('greyTxt')){
                     ele.find('.nottip').html('（抱歉，您家人年龄超出范围不能获得意外互助权益）');
                 }
                 
             }else{
-                elemUl.find('.fangai').show().siblings().hide();
+                elemUl.find('.fangai').show().removeClass('greyTxt').siblings('.dabing').hide();
                 ele.find('.nottip').html('（60岁以上的会员可参与老年防癌互助计划）');
             }
         }

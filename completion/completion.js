@@ -42,12 +42,10 @@ var func={
             console.log(minage+'_'+maxage+'_'+userAge);
 
             if(relationType!=4){
-                if(userAge<=60){
-                    if(userAge>=minage && userAge<=maxage){
-                        elemlI.eq(i).removeClass('greyTxt');
-                    }else{
-                        elemlI.eq(i).addClass('greyTxt');
-                    }
+                if(userAge>=minage && userAge<=maxage){
+                    elemlI.eq(i).removeClass('greyTxt');
+                }else{
+                    elemlI.eq(i).addClass('greyTxt');
                 }
                 
             }else{
@@ -65,12 +63,13 @@ var func={
             ele.find('.nottip').html('（抱歉，您不能为其他亲友代管意外互助计划）');
         }else{
             if(userAge<=60){
+                $('.fangai').hide().siblings('.dabing').show();
                 if(elemUl.find('li[data-sicktype="yiwai"]').hasClass('greyTxt')){
                     ele.find('.nottip').html('（抱歉，您家人年龄超出范围不能获得意外互助权益）');
                 }
                 
             }else{
-                elemUl.find('.fangai').show().siblings().hide();
+                elemUl.find('.fangai').show().removeClass('greyTxt').siblings('.dabing').hide();
                 ele.find('.nottip').html('（60岁以上的会员可参与老年防癌互助计划）');
             }
         }
