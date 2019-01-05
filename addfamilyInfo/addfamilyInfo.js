@@ -104,6 +104,7 @@ var func={
     equitiescheck:function(userBox){
         console.log(userBox);
         var ele=userBox.parents('.addinfo');
+        var idcar=ele.find('.idcard').val();
         var userAge=GetAge(ele.find('.idcard').val());
         var relationType=ele.find('.relation').data('relationNum')
         var elemUl=userBox.parents('.addinfo').find('.equitiesList');
@@ -115,6 +116,7 @@ var func={
         //初始化
         elemUl.find('.fangai').hide().siblings().show();
         ele.find('.nottip').html('');
+        elemUl.find('li').removeClass('greyTxt');
 
         for(var i=0;i<elemlI.length;i++){
             minage=parseInt(elemlI.eq(i).data('minage'));
@@ -123,11 +125,14 @@ var func={
             console.log(minage+'_'+maxage+'_'+userAge);
 
             if(relationType!=4){
-                if(userAge>=minage && userAge<=maxage){
-                    elemlI.eq(i).removeClass('greyTxt');
-                }else{
-                    elemlI.eq(i).addClass('greyTxt');
+                if(idcar!=''){
+                    if(userAge>=minage && userAge<=maxage){
+                        elemlI.eq(i).removeClass('greyTxt');
+                    }else{
+                        elemlI.eq(i).addClass('greyTxt');
+                    }
                 }
+                
                 
             }else{
                 if(sicktype=='yiwai'){
@@ -141,15 +146,17 @@ var func={
         if(relationType==4){
             ele.find('.nottip').html('（抱歉，您不能为其他亲友代管意外互助计划）');
         }else{
-            if(userAge<=60){
-                $('.fangai').hide().siblings('.dabing').show();
-                if(elemUl.find('li[data-sicktype="yiwai"]').hasClass('greyTxt')){
-                    ele.find('.nottip').html('（抱歉，您家人年龄超出范围不能获得意外互助权益）');
+            if(idcar!=''){
+                if(userAge<=60){
+                    $('.fangai').hide().siblings('.dabing').show();
+                    if(elemUl.find('li[data-sicktype="yiwai"]').hasClass('greyTxt')){
+                        ele.find('.nottip').html('（抱歉，您家人年龄超出范围不能获得意外互助权益）');
+                    }
+                    
+                }else{
+                    elemUl.find('.fangai').show().removeClass('greyTxt').siblings('.dabing').hide();
+                    ele.find('.nottip').html('（60岁以上的会员可参与老年防癌互助计划）');
                 }
-                
-            }else{
-                elemUl.find('.fangai').show().removeClass('greyTxt').siblings('.dabing').hide();
-                ele.find('.nottip').html('（60岁以上的会员可参与老年防癌互助计划）');
             }
         }
     },
