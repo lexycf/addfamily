@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>填写信息</title>
+    <link rel="stylesheet" href="../commonfile/css/reset.css">
+    <script src="../commonfile/js/zepto.min.js"></script>
+    <script src="../commonfile/js/jquery-2.1.4.min.js"></script>
+    <script src='../commonfile/js/reset.js'></script>
+    <link rel="stylesheet" href="../plug/layerBox/layerBox.css">
+    <link rel="stylesheet" href="./css/completeInfo.css">
+</head>
+<body>
+    <div class="completeInfoBox" node-type="con-content">
+        <div class="banner"><img src="./img/images/banner_02.png" alt=""></div>
+        <div class="infoBox">
+            <div class="tit">填好友信息</div>
+            <div class="addinfo">
+                <div class="inputBox">
+                    <p class='inpBox'>
+                        <label for="">好友姓名：</label>
+                        <input type="text" class='inp' id="name">
+                    </p>
+                    <div class="errBox"></div>
+                </div>
+                <div class="inputBox">
+                    <p class='inpBox'>
+                        <label for="">好友年龄：</label>
+                        <input type="text" class='inp' id="age" readonly="readonly">
+                        <span>（忘记可不填）</span>
+                    </p>
+                    <div class="errBox"></div>
+                </div>
+                <div class="inputBox">
+                    <p class='inpBox'>
+                        <label for="">好友电话：</label>
+                        <input type="text" class='inp' id="phone">
+                        <span>（忘记可不填）</span>
+                    </p>
+                    <div class="errBox"></div>
+                </div>
+            </div>
+        </div>
+        <div class="equities">
+            <div class='tit'>可获得的权益</div>
+            <ul class='equitiesList'>
+                <li class='fangai'  data-minage='0' data-maxage='59' data-sicktype="fangai"><span></span>老年防癌互助权益</li>
+                <li class='dabing' data-minage='0' data-maxage='60' data-sicktype='dabing'><span></span>大病互助最高40万互助金（28天-59周岁）</li>
+                <li data-minage='18' data-maxage='65' data-sicktype='yiwai'><span></span>意外身故最高20万互助金（18-65周岁）</li>
+                <li data-minage='18' data-maxage='65' data-sicktype='yiwai'><span></span>意外身故最高20万互助金（18-65周岁）</li>
+            </ul>
+        </div>    
+        <div class="sub" id='subBtn'>保密提交</div>
+        <div id="j_ageBox">
+            <div class="layer-title">选择年龄</div>
+            <div class="layer-info">
+                <ul class="ageList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src='./data.js'></script>
+    <script src="../plug/layerBox/alias.js"></script>
+    <script src="../plug/layerBox/layerBox.js"></script>
+    <script src="./js/completeInfo.js"></script>
+</body>
+</html>

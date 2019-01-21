@@ -23,7 +23,7 @@ var func={
     equitiescheck:function(userBox){
         
         var ele=userBox.parents('.addinfo');
-        var idcar=ele.find('.idcard').v
+        var idcar=ele.find('.idcard').val();
         var userAge=GetAge(ele.find('.idcard').val());
         var relationType=ele.find('.relation').data('relationNum')
         var elemUl=userBox.parents('.addinfo').find('.equitiesList');

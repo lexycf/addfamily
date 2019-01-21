@@ -1,0 +1,40 @@
+var ageData=[
+    {
+        val:'出生于2016年，3周岁，属猴',
+        birthYear:'2016',
+        showTxt:'3周岁，属猴'
+    },
+    {
+        val:'出生于2015年，4周岁，属羊',
+        birthYear:'2015',
+        showTxt:'4周岁，属羊'
+    },
+    {
+        val:'出生于2014年，5周岁，属马',
+        birthYear:'2014',
+        showTxt:'5周岁，属马'
+    },
+    {
+        val:'出生于2013年，6周岁，属蛇',
+        birthYear:'2013',
+        showTxt:'6周岁，属蛇'
+    },
+    {
+        val:'出生于2012年，7周岁，属龙',
+        birthYear:'2012',
+        showTxt:'7周岁，属龙'
+    },
+    
+    {
+        val:'出生于2000年，7周岁，属龙',
+        birthYear:'2000',
+        showTxt:'7周岁，属龙'
+    },
+    {
+        val:'出生于1950年，69周岁，属龙',
+        birthYear:'1950',
+        showTxt:'69周岁，属龙'
+    }
+
+]
+window.ageData=ageData;
