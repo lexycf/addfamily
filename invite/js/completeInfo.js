@@ -78,7 +78,11 @@ var func={
                 layerContent.find('.j_ageli').click(function () {
                     var ageTxt=$(this).attr('data-showTxt');
                     var ageYear=$(this).attr('data-birthYear');
+                    var idx=$(this).index();
+                    $(func.node.ageList).find('li').eq(idx).addClass('active').siblings().removeClass('active');
+
                     //console.log(ageTxt+"_"+ageYear);
+                    console.log(idx);
                     clickBox.val(ageTxt);
                     func.node.userAgeParam=ageYear;
                     func.equitiescheck();

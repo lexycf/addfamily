@@ -97,3 +97,7 @@ body {
   color: #1b1b1b;
   text-align: center;
 }
+.ageList li.active {
+  background: #fef1de;
+  color: #ffaf55;
+}

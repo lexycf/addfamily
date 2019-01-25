@@ -1,0 +1,70 @@
+.indexBox .banner {
+  width: 100%;
+}
+.indexBox .banner img {
+  width: 100%;
+}
+.indexBox .tit {
+  font-size: 0.3rem;
+  color: #333;
+  margin: 0.5rem 0.3rem 0.2rem;
+}
+.indexBox .infoBox .addinfo {
+  background: #f6f9ff;
+  margin: 0 0.3rem;
+  background: #fff;
+  padding: 0.5rem 0.4rem;
+  border-radius: 0.2rem;
+}
+.indexBox .infoBox .addinfo .inputBox label {
+  font-size: 0.28rem;
+  color: #7e6b5a;
+}
+.indexBox .infoBox .addinfo .inputBox .inp {
+  width: 3rem;
+  height: 0.48rem;
+  border: none;
+  border-bottom: 1px  solid #dbdcdc;
+  font-size: 0.28rem;
+  color: #1b1b1b;
+}
+.indexBox .infoBox .addinfo .inputBox span {
+  font-size: 0.22rem;
+  color: #a0a0a0;
+}
+.indexBox .infoBox .addinfo .inputBox .errBox {
+  font-size: 0.24rem;
+  color: #ec3947;
+  height: 0.28rem;
+  text-align: center;
+  margin-top: 0.1rem;
+}
+.indexBox .equities .equitiesList {
+  background: #f6f9ff;
+  margin: 0 0.3rem;
+  padding: 0 0.3rem;
+}
+.indexBox .equities .equitiesList li {
+  margin-bottom: 0.3rem;
+  font-size: 0.3rem;
+  color: #7e6b5a;
+}
+.indexBox .equities .equitiesList li.fangai {
+  display: none;
+}
+.indexBox .equities .equitiesList li span {
+  display: inline-block;
+  width: 0.26rem;
+  height: 0.26rem;
+  background: #ffaf55;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 0.22rem;
+  border-radius: 50%;
+}
+.indexBox .equities .equitiesList li.greyTxt {
+  color: #d8d8d8;
+}
+.indexBox .equities .equitiesList li.greyTxt span {
+  background: #d8d8d8;
+}
