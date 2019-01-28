@@ -4,6 +4,8 @@ var func={
         name:'#name',
         idcard:'#idcard',
         phone:'#phone',
+        equitiesList:'.equitiesList',
+        icon:'.icon'
     },
     bindEvent:function(){
         $(func.node.conContent)
@@ -24,11 +26,29 @@ var func={
             .delegate(func.node.phone,'focus',function(){
                 $(this).parent().siblings('.errBox').html('');
             })
+            .delegate(func.node.idcard,'blur',function(){
+                var reg = /^\d{15}(\d{2}[\d|X|x])?$/;
+                var idcardVal=$(this).val();
+                if(!reg.test(idcardVal)){
+                    $(this).parent('.inpBox').siblings('.errBox').html('请输入正确的身份证号码');
+                }else{
+                    func.equitiescheck($(this));
+                }
+            })
+            .delegate(func.node.idcard,'focus',function(){
+                
+                $(this).parent('.inpBox').siblings('.errBox').html('');
+             
+            })
+            .delegate(func.node.icon,'click',function(){
+                $(this).toggleClass('active');
+            })
     },
     equitiescheck:function(){
-        var date=new Date();
-        var nowYear=date.getFullYear();
-        var userAge=nowYear-parseInt(func.node.userAgeParam);
+        var idcarVal=$(func.node.idcard).val();
+        console.log(idcarVal);
+        
+        var userAge=GetAge(idcarVal);
         //console.log(userAge);
         var elemUl=$(func.node.equitiesList);
         var minage='',
