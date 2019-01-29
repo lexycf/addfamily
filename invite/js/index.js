@@ -5,7 +5,12 @@ var func={
         idcard:'#idcard',
         phone:'#phone',
         equitiesList:'.equitiesList',
-        icon:'.icon'
+        icon:'.icon',
+        helpDetail:'.helpDetail',
+        pagenate:".pagenate",
+        uls:'.uls',
+        pageN:'.pageN',
+        lingBtn:".lingBtn"
     },
     bindEvent:function(){
         $(func.node.conContent)
@@ -26,6 +31,15 @@ var func={
             .delegate(func.node.phone,'focus',function(){
                 $(this).parent().siblings('.errBox').html('');
             })
+            .delegate(func.node.phone,'blur',function(){
+                var reg = /^1[3-9][0-9]\d{8}$/;
+                var phoneVal=$(func.node.phone).val();
+                if(phoneVal==''){
+                    $(this).parent().siblings('.errBox').html('请输入手机号');
+                }else if(!reg.test(phoneVal)){
+                    $(this).parent().siblings('.errBox').html('手机号码不正确');
+                }
+            })
             .delegate(func.node.idcard,'blur',function(){
                 var reg = /^\d{15}(\d{2}[\d|X|x])?$/;
                 var idcardVal=$(this).val();
@@ -43,6 +57,36 @@ var func={
             .delegate(func.node.icon,'click',function(){
                 $(this).toggleClass('active');
             })
+            .delegate(func.node.pageN,'click',function(){
+                var idx=$(this).index();
+                func.helpDetailFun(idx);
+            })
+            .delegate(func.node.lingBtn,'click',function(){
+                var name=$(func.node.name).val();
+                var reg = /^\d{15}(\d{2}[\d|X|x])?$/;
+                var idcardVal=$(func.node.idcard).val();
+                var reg2 = /^1[3-9][0-9]\d{8}$/;
+                var phoneVal=$(func.node.phone).val();
+                if(name==""){
+                    $(func.node.name).parent().siblings('.errBox').html('姓名不能为空');
+                    return false;
+                }else if(!reg.test(idcardVal)){
+                    $(func.node.idcard).parent('.inpBox').siblings('.errBox').html('请输入正确的身份证号码');
+                    return false;
+                }else if(phoneVal==''){
+                    $(func.node.phone).parent().siblings('.errBox').html('请输入手机号');
+                    return false;
+                }else if(!reg2.test(phoneVal)){
+                    $(func.node.phone).parent().siblings('.errBox').html('手机号码不正确');
+                    return false;
+                }else{
+                    alert('提交成功');
+                }
+            })
+    },
+    helpDetailFun:function(idx){
+        $(func.node.pageN).eq(idx).addClass('active').siblings().removeClass('active');
+        $(func.node.helpDetail).eq(idx).show().siblings().hide();
     },
     equitiescheck:function(){
         var idcarVal=$(func.node.idcard).val();
@@ -83,6 +127,7 @@ var func={
     },
     init:function(){
         func.bindEvent();
+        func.helpDetailFun(0);
     }
 }
 func.init();
